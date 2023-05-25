@@ -16,6 +16,7 @@ export default function Navigation() {
 							<Link className='nav-link' to='/historique'>Historique</Link>
 						</li>
 						<li className='nav-item'>
+
 							<Link className='nav-link' to='/crew'>Crew</Link>
 						</li>
 						<li className='nav-item'>
