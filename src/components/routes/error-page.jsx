@@ -5,7 +5,7 @@ export default function ErrorPage() {
   // console.error(error);
 
   return (
-    <div id="error-page" className="container mt-5 text-white d-flex flex-column align-items-center">
+    <div id="error-page" className="container mt-5 d-flex flex-column align-items-center">
       <h1>Oops!</h1>
       <p>Sorry, an unexpected error has occurred.</p>
       <p>

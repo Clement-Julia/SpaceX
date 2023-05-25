@@ -16,10 +16,10 @@ export default function Navigation() {
 							<Link className='nav-link' to='/historique'>Historique</Link>
 						</li>
 						<li className='nav-item'>
-							<Link className='nav-link' to='/crew'>Crew</Link>
+							<Link className='nav-link' to='/crew'>Équipage</Link>
 						</li>
 						<li className='nav-item'>
-							<Link className='nav-link' to='/rockets'>Rockets</Link>
+							<Link className='nav-link' to='/rockets'>Fusée</Link>
 						</li>
 					</ul>
 				</div>
