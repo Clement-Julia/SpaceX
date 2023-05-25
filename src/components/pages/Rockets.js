@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import CardRocket from '../layout/CardRocket'
 import Rocket from '../layout/Rocket'
+import { toast } from 'react-toastify'
 
 const Rockets = () => {
 	const [data, setData] = useState([])
 	const { id = '' } = useParams()
-	// const lang = localStorage.getItem('degree');
 
 	useEffect(() => {
 		fetchData()
@@ -19,8 +19,7 @@ const Rockets = () => {
 			const response = await axios.get(url)
 			setData(response.data)
 		} catch (error) {
-			// toast.error(`Une erreur s'est produite : ${error.message}`)
-			console.log('error')
+			toast.error(`Une erreur s'est produite : ${error.message}`)
 		}
 	}
 
