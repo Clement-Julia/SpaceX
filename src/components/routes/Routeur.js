@@ -3,6 +3,8 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Navigation from '../layout/navigation'
+import ListEquipage from '../pages/ListEquipage'
+import Membre from '../pages/Membre'
 
 import Home from '../pages/Home'
 import NotFound from './error-page'
@@ -14,6 +16,8 @@ const Routeur = () => {
 			<Routes>
 				<Route exact path='/' element={<Home />} />
 				<Route path='*' element={<NotFound />} />
+				<Route path='/crew' element={<ListEquipage/>}/>
+				<Route path='/crew/:id' element={<Membre/>}/>
 			</Routes>
 		</BrowserRouter>
 	)

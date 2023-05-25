@@ -15,8 +15,8 @@ export default function Navigation() {
 							</Link>
 						</li>
 						<li className='nav-item'>
-							<Link className='nav-link' to='searchForm/batman'>
-								SearchForm
+							<Link className='nav-link' to='Crew'>
+								Crew
 							</Link>
 						</li>
 					</ul>
