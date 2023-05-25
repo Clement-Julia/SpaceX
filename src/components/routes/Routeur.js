@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import Navigation from '../layout/navigation'
 
 import Home from '../pages/Home'
+import Rockets from '../pages/Rockets'
 import NotFound from './error-page'
 
 const Routeur = () => {
@@ -13,6 +14,8 @@ const Routeur = () => {
 			<Navigation />
 			<Routes>
 				<Route exact path='/' element={<Home />} />
+				<Route path='/rockets' element={<Rockets />} />
+				<Route path='/rocket/:id' element={<Rockets />} />
 				<Route path='*' element={<NotFound />} />
 			</Routes>
 		</BrowserRouter>
