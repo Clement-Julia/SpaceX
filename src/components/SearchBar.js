@@ -9,12 +9,15 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <input
-      type="text"
-      placeholder="Search..."
-      value={query}
-      onChange={handleInputChange}
-    />
+    <form className="form-inline">
+      <input
+        className="form-control mr-sm-2 w-50"
+        type="text"
+        placeholder="Search..."
+        value={query}
+        onChange={handleInputChange}
+      />
+    </form>
   );
 };
 
