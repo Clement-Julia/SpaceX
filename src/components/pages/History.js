@@ -26,7 +26,7 @@ const Rockets = () => {
 	}
 
 	return (
-		<section className='design-section'>
+		<section className='design-section pt-10'>
 			<div className='timeline accordion accordion-flush id="accordionExample"'>
 				{data.map((time) => {
 					const linkArray = Object.values(time.links)

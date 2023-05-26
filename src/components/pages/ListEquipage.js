@@ -37,7 +37,7 @@ const ListEquipage = () => {
   
 
   return (
-    <div className="container">
+    <div className="container mt-10">
       <div className="row mt-4">
         <div className="col">
           <SearchBar onSearch={handleSearch} />
