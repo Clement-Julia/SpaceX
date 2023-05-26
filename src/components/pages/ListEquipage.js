@@ -7,6 +7,7 @@ import ReactLoading from 'react-loading';
 const ListEquipage = () => {
   const [equipage, setEquipage] = useState([]);
   const [filteredEquipage, setFilteredEquipage] = useState([]);
+  
 
   useEffect(() => {
     fetchEquipage();
@@ -30,6 +31,10 @@ const ListEquipage = () => {
     });
     setFilteredEquipage(filteredData);
   };
+
+  
+
+  
 
   return (
     <div className="container">
