@@ -5,6 +5,10 @@ import { toast } from 'react-toastify'
 import ReactLoading from 'react-loading'
 import '../../assets/style/components/Home.css'
 
+function numberWithSpaces(x) {
+	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+}
+
 const Home = () => {
 	const [data, setData] = useState([])
 	const [dataPad, setDataPad] = useState([])
@@ -75,7 +79,7 @@ const Home = () => {
 	return data.name && Object.keys(user).length && Object.keys(rockets).length ? (
 		<>
 			<section className='section-block launcher-background'>
-				<div className='d-flex align-items-center flex-column h-100 text-white launcher'>
+				<div className='d-flex align-items-center flex-column h-100 w-100 text-white launcher'>
 					<h1 className='spaceX title'>SpaceX</h1>
 					<div>
 						<Link className='text-white' to={data.links.website} title='Site web officiel' target='_blank'>
@@ -91,10 +95,152 @@ const Home = () => {
 							<i className='fa-solid fa-hashtag fa-lg mx-2'></i>
 						</Link>
 					</div>
-					<div className='d-flex flex-column px-15 pt-5'>
-						<span className='pb-5'>{data.summary}</span>
-						<span>Nombre d'employé : {data.employees}</span>
-						<span>Valeur marchande : {data.valuation}$</span>
+					<div className='row justify-content-center mt-10'>
+						<div className='cardHome col-12 col-md-6 m-3'>
+							<div className='text-end pe-4 icon'>
+								<i className='fa-solid fa-user fa-2xl text-white'></i>
+							</div>
+							<h2 className='mt-5'>{numberWithSpaces(data.employees)} Employees</h2>
+							<div className='shine'></div>
+							<div className='background'>
+								<div className='tiles'>
+									<div className='tile tile-1'></div>
+									<div className='tile tile-2'></div>
+									<div className='tile tile-3'></div>
+									<div className='tile tile-4'></div>
+
+									<div className='tile tile-5'></div>
+									<div className='tile tile-6'></div>
+									<div className='tile tile-7'></div>
+									<div className='tile tile-8'></div>
+
+									<div className='tile tile-9'></div>
+									<div className='tile tile-10'></div>
+								</div>
+
+								<div className='line line-1'></div>
+								<div className='line line-2'></div>
+								<div className='line line-3'></div>
+							</div>
+						</div>
+						<div className='cardHome col-12 col-md-6 m-3'>
+							<div className='text-end pe-4 icon'>
+								<i className='fa-solid fa-hand-holding-dollar fa-2xl text-white'></i>
+							</div>
+							<h3 className='mt-5'>{numberWithSpaces(data.valuation)}$ valuation</h3>
+							<div className='shine'></div>
+							<div className='background'>
+								<div className='tiles'>
+									<div className='tile tile-1'></div>
+									<div className='tile tile-2'></div>
+									<div className='tile tile-3'></div>
+									<div className='tile tile-4'></div>
+
+									<div className='tile tile-5'></div>
+									<div className='tile tile-6'></div>
+									<div className='tile tile-7'></div>
+									<div className='tile tile-8'></div>
+
+									<div className='tile tile-9'></div>
+									<div className='tile tile-10'></div>
+								</div>
+
+								<div className='line line-1'></div>
+								<div className='line line-2'></div>
+								<div className='line line-3'></div>
+							</div>
+						</div>
+						<div className='cardHome col-12 col-md-6 m-3 d-md-none'>
+							<div className='text-end pe-4 icon'>
+								<i className='fa-solid fa-rocket fa-2xl text-white'></i>
+							</div>
+							<h3 className='mt-10'>{numberWithSpaces(data.vehicles)} rockets</h3>
+							<div className='shine'></div>
+							<div className='background'>
+								<div className='tiles'>
+									<div className='tile tile-1'></div>
+									<div className='tile tile-2'></div>
+									<div className='tile tile-3'></div>
+									<div className='tile tile-4'></div>
+
+									<div className='tile tile-5'></div>
+									<div className='tile tile-6'></div>
+									<div className='tile tile-7'></div>
+									<div className='tile tile-8'></div>
+
+									<div className='tile tile-9'></div>
+									<div className='tile tile-10'></div>
+								</div>
+
+								<div className='line line-1'></div>
+								<div className='line line-2'></div>
+								<div className='line line-3'></div>
+							</div>
+						</div>
+						<div className='cardHome col-12 col-md-6 m-3 d-md-none'>
+							<div className='text-end pe-4 icon'>
+								<i className="fa-brands fa-space-awesome fa-2xl text-white"></i>
+							</div>
+							<h3 className='mt-5'>{numberWithSpaces(data.launch_sites)} launch sites</h3>
+							<h3>{numberWithSpaces(data.test_sites)} test sites</h3>
+							<div className='shine'></div>
+							<div className='background'>
+								<div className='tiles'>
+									<div className='tile tile-1'></div>
+									<div className='tile tile-2'></div>
+									<div className='tile tile-3'></div>
+									<div className='tile tile-4'></div>
+
+									<div className='tile tile-5'></div>
+									<div className='tile tile-6'></div>
+									<div className='tile tile-7'></div>
+									<div className='tile tile-8'></div>
+
+									<div className='tile tile-9'></div>
+									<div className='tile tile-10'></div>
+								</div>
+
+								<div className='line line-1'></div>
+								<div className='line line-2'></div>
+								<div className='line line-3'></div>
+							</div>
+						</div>
+						{Object.keys(user).map((key) => (
+							<div key={key} className='cardHome d-none d-md-none col-12 col-md-6 m-3'>
+								<div className='text-end pe-4 icon'>
+									<i className="fa-solid fa-brain fa-2xl text-white"></i>
+								</div>
+								<h3 className='mt-5 mb-2'>{key}</h3>
+								{user[key].map((profession, i) => {
+									return (
+										<h3 className='m-0' key={i}>
+											{profession}
+										</h3>
+									)
+								})}
+								<div className='shine'></div>
+								<div className='background'>
+									<div className='tiles'>
+										<div className='tile tile-1'></div>
+										<div className='tile tile-2'></div>
+										<div className='tile tile-3'></div>
+										<div className='tile tile-4'></div>
+
+										<div className='tile tile-5'></div>
+										<div className='tile tile-6'></div>
+										<div className='tile tile-7'></div>
+										<div className='tile tile-8'></div>
+
+										<div className='tile tile-9'></div>
+										<div className='tile tile-10'></div>
+									</div>
+
+									<div className='line line-1'></div>
+									<div className='line line-2'></div>
+									<div className='line line-3'></div>
+								</div>
+							</div>
+						))}
 					</div>
 					<div className='footer-address'>
 						<span>
@@ -103,11 +249,11 @@ const Home = () => {
 					</div>
 				</div>
 			</section>
-			<section className='section-block'>
+			<section className='section-block d-none d-md-flex'>
 				<div className='row me-0'>
 					{dataPad.map((pad, i) => {
 						return (
-							<div key={i} className='col-md-4 col-6 px-0 h-50'>
+							<div key={i} className='col-12 col-lg-4 px-0 auto-h'>
 								<figure className='snipParent cursor'>
 									<img className='basic-img' src={pad.images.large} alt={pad.name} style={{ width: '100%', height: '100%' }} />
 									<figcaption>
@@ -138,7 +284,7 @@ const Home = () => {
 					})}
 				</div>
 			</section>
-			<section className='section-block'>
+			<section className='section-block d-none d-md-flex'>
 				<div className='row me-0'>
 					{Object.keys(user).map((key) => (
 						<div key={key} className='col-md-4 col-6 px-0'>
@@ -147,7 +293,11 @@ const Home = () => {
 								<figcaption>
 									<h3 className='Parenth3'>{key}</h3>
 									{user[key].map((profession, i) => {
-										return <h4 className='Parenth4' key={i}>{profession}</h4>
+										return (
+											<h4 className='Parenth4' key={i}>
+												{profession}
+											</h4>
+										)
 									})}
 								</figcaption>
 							</figure>

@@ -4,7 +4,7 @@ const Rocket = ({data}) => {
 	
 	return (
 		<div className='row flex-row'>
-			<div className='d-flex flex-column pe-5 col-6'>
+			<div className='d-flex flex-column pe-5 col-12 col-md-6'>
 				<div id='carouselExampleDark' className='carousel slide'>
 					<div className='carousel-indicators'>
 						{data.flickr_images.map((url, i) => {
@@ -30,7 +30,7 @@ const Rocket = ({data}) => {
 					</button>
 				</div>
 			</div>
-			<div className='col-6'>
+			<div className='col-12 col-md-6 mt-3 mt-md-0'>
 				<h1 className='mb-3'>
 					{data.name}
 					<Link className='fa-brands fa-wikipedia-w fa-2xs ms-3 text-muted text-decoration-none' to={data.wikipedia} target='_blank' title='Page wikipedia'></Link>
@@ -72,14 +72,14 @@ const Rocket = ({data}) => {
 							</div>
 						</div>
 					</div>
-					<div className='accordion-item'>
+					<div className='accordion-item mb-4'>
 						<h2 className='accordion-header'>
 							<button className='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseThree' aria-expanded='false' aria-controls='collapseThree'>
 								Décollage / Atterrissage
 							</button>
 						</h2>
 						<div id='collapseThree' className='accordion-collapse collapse' data-bs-parent='#accordionExample'>
-							<div className='accordion-body mb-4'>
+							<div className='accordion-body'>
 								<p>Nombre de boosters : {data.boosters}</p>
 								<p>Nombre de jambe d'atterrissage : {data.landing_legs.number}</p>
 								{data.landing_legs.number > 0 && <p>Matériaux des jambes : {data.landing_legs.number}</p>}

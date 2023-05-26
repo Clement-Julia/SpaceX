@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 const CardRocket = ({rocket}) => {
 
     return (
-        <div key={rocket.id} className='col-3'>
-            <div className='card' style={{ width: '18rem' }}>
+        <div key={rocket.id} className='col-6 col-lg-3'>
+            <div className='card m-2'>
                 <img src={rocket.flickr_images[0]} className='card-img-top' alt={rocket.name} />
                 <div className='card-body'>
                     <h5 className='card-title'>{rocket.name}</h5>

@@ -9,7 +9,7 @@
 
 .navMenu {
   position: absolute;
-  top: 5%;
+  top: 20px;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -84,4 +84,13 @@
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   opacity: 1;
+}
+
+@media (max-width: 1000px) {
+  #navResponsive{
+    display: block !important;
+  }
+  .navMenu{
+    display: none;
+  }
 }

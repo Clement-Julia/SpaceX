@@ -32,14 +32,10 @@ const ListEquipage = () => {
     setFilteredEquipage(filteredData);
   };
 
-  
-
-  
-
   return (
     <div className="container mt-10">
       <div className="row mt-4">
-        <div className="col">
+        <div className="col-12 col-md-6">
           <SearchBar onSearch={handleSearch} />
         </div>
       </div>

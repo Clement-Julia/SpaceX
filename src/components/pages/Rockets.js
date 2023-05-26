@@ -35,7 +35,7 @@ const Rockets = () => {
 				</div>
 			) : (
 				<>
-					<Link className='btn btn-primary mb-3' to={{ pathname: '/rockets' }}>
+					<Link className='btn btn-primary my-3' to={{ pathname: '/rockets' }}>
 						Retour
 					</Link>
 					<Rocket data={data} />

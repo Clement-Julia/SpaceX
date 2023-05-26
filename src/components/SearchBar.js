@@ -11,7 +11,7 @@ const SearchBar = ({ onSearch }) => {
   return (
     <form className="form-inline">
       <input
-        className="form-control mr-sm-2 w-50"
+        className="form-control mr-sm-2"
         type="text"
         placeholder="Search..."
         value={query}

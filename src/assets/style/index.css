@@ -1,9 +1,11 @@
-.mt-10 {
-	margin-top: 5rem !important;
-}
-
-.pt-10 {
-	padding-top: 5rem !important;
+@media (min-width: 1000px) {
+	.mt-10 {
+		margin-top: 5rem !important;
+	}
+	
+	.pt-10 {
+		padding-top: 5rem !important;
+	}	
 }
 
 .timer {

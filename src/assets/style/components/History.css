@@ -29,8 +29,8 @@
 .timeline-content {
 	padding: 20px;
 	background: #1f1f1f;
-	-webkit-box-shadow: 0px 0px 25px #515151;
-	box-shadow: 0px 0px 25px #515151;
+	-webkit-box-shadow: 0px 0px 6px #f27121, 0px 0px 6px #e94057, 0px 0px 6px #8a2387;
+	box-shadow: 0px 0px 6px #f27121, 0px 0px 6px #e94057, 0px 0px 6px #8a2387;
 	border-radius: 5px;
 	color: white;
 	padding: 1.75rem;
@@ -76,14 +76,25 @@
 
 	.info-button {
 		background: #1f1f1f;
-			color: white;
-
+		color: white;
 	}
 
-	.timeline-date{
+	.timeline-date {
 		background: linear-gradient(45deg, #f27121, #e94057, #8a2387);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 	}
+}
+
+.accordion-button:after {
+	background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+}
+
+.accordion-button:focus {
+	box-shadow: none !important;
+}
+
+.accordion-flush .accordion-item {
+    border-bottom: 0;
 }
