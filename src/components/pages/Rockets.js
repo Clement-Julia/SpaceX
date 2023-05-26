@@ -26,7 +26,7 @@ const Rockets = () => {
 	}
 
 	return (
-		<div className='container mt-3'>
+		<div className='container mt-10'>
 			{Array.isArray(data) ? (
 				<div className='row justify-content-center'>
 					{data.map((rocket) => {

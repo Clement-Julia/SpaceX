@@ -24,7 +24,7 @@ const Rockets = () => {
 	}
 
 	return (
-		<section className='design-section'>
+		<section className='design-section pt-10'>
 			<div className='timeline'>
 				{data.map((time) => {
 					return(
