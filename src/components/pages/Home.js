@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import ReactLoading from 'react-loading'
 import '../../assets/style/components/Home.css'
-import '../../assets/style/components/test.css'
 
 const Home = () => {
 	const [data, setData] = useState([])
