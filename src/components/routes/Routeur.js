@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
-import { toast } from 'react-toastify'
+// import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Navigation from '../layout/navigation'
 import ListEquipage from '../pages/ListEquipage'
