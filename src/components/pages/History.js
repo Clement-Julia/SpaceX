@@ -28,18 +28,23 @@ const Rockets = () => {
 	return (
 		<section className='design-section pt-10'>
 			<div className='timeline accordion accordion-flush id="accordionExample"'>
-				{data.map((time) => {
+				{data.map((time, index) => {
 					const linkArray = Object.values(time.links)
+					const isOdd = index % 2 === 0
 					return (
 						<>
-							<div className='timeline-empty'></div>
+							{isOdd && (
+								<>
+									<div className='timeline-empty'></div>
 
-							<div className='timeline-middle'>
-								<div className='timeline-circle'></div>
-							</div>
+									<div className='timeline-middle'>
+										<div className='timeline-circle'></div>
+									</div>
+								</>
+							)}
 							<div className='timeline-component timeline-content accordion-item'>
 								<button
-									className='accordion-button '
+									className='accordion-button collapsed '
 									type='button'
 									data-bs-toggle='collapse'
 									data-bs-target={`#${time.id}`}
@@ -51,24 +56,21 @@ const Rockets = () => {
 									}}
 								>
 									<div>
-										<p className='timeline-date'><b>{format(new Date(time.event_date_utc), 'yyyy-MM-dd')}</b></p>
+										<p className='timeline-date'>
+											<b>{format(new Date(time.event_date_utc), 'yyyy-MM-dd')}</b>
+										</p>
 										<h3 className='accordion-header'>{time.title}</h3>
 									</div>
 								</button>
-								<div id={time.id} className='accordion-collapse collapse show' aria-labelledby='headingOne' data-bs-parent='#accordionExample'>
+								<div id={time.id} className='accordion-collapse collapse hidden' aria-labelledby='headingOne' data-bs-parent='#accordionExample'>
 									<div className='accordion-body'>
 										<p>{time.details}</p>
 										<div className='list-group list-group-horizontal'>
 											{linkArray.map((link, index) => {
 												if (link) {
 													return (
-														<a
-															key={index}
-															href={link}
-															className='list-group-item list-group-item-action info-button'
-															
-														>
-															Information {index + 1}
+														<a key={index} href={link} className='list-group-item list-group-item-action info-button'>
+															Link {index + 1}
 														</a>
 													)
 												}
@@ -77,40 +79,18 @@ const Rockets = () => {
 									</div>
 								</div>
 							</div>
+							{!isOdd && (
+								<>
+									<div className='timeline-middle'>
+										<div className='timeline-circle'></div>
+									</div>
+									<div className='timeline-empty'></div>
+								</>
+							)}
 						</>
 					)
 				})}
-				{/* <div className='timeline-empty'></div>
-
-				<div className='timeline-middle'>
-					<div className='timeline-circle'></div>
-				</div>
-				<div className='timeline-component timeline-content'>
-					<h3>HTML</h3>
-					<p>Some Text</p>
-				</div>
-				<div className='timeline-component timeline-content'>
-					<h3>CSS</h3>
-					<p>Some Text.</p>
-				</div>
-				<div className='timeline-middle'>
-					<div className='timeline-circle'></div>
-				</div>
-				<div className='timeline-empty'></div>
-
-				<div className='timeline-empty'></div>
-
-				<div className='timeline-middle'>
-					<div className='timeline-circle'></div>
-				</div>
-				<div className=' timeline-component timeline-content'>
-					<h3>Javascript</h3>
-					<p>Some Text.</p>
-				</div>
-				<div className='timeline-component timeline-content'>
-					<h3>CSS</h3>
-					<p>Some Text.</p>
-				</div> */}
+				
 			</div>
 		</section>
 	)

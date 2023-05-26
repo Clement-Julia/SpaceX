@@ -18,7 +18,7 @@ const Membre = () => {
       const response = await axios.get(`https://api.spacexdata.com/v4/crew/${id}`);
       setMember(response.data);
     } catch (error) {
-      toast.error(`Une erreur s'est produite : ${error.message}`);
+      toast.error(`An error has occurred : Unknown Crew Member`);
       navigate('/crew');
     }
   };
@@ -34,7 +34,7 @@ const Membre = () => {
   const badgeClass = member.status === 'active' ? 'badge bg-success rounded-circle' : 'badge bg-danger rounded-circle';
 
   return (
-    <div className="container">
+    <div className="container mt-10">
       <div className="row justify-content-center mt-4">
         <div className="col-md-6 text-center">
           <h2>
