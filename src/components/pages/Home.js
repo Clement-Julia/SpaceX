@@ -139,16 +139,15 @@ const Home = () => {
 				</div>
 			</section>
 			<section className='section-block'>
-				{/* <h1>CEO & CTO & cto_propulsion & coo</h1> */}
 				<div className='row me-0'>
 					{Object.keys(user).map((key) => (
 						<div key={key} className='col-md-4 col-6 px-0'>
 							<figure className='snipParent cursor'>
-								<img src={require(`../../assets/img/${key.replace(/\s/g, '')}.jpg`)} alt={key} style={{ width: '100%', height: '100%' }} />
+								<img className='basic-img' src={require(`../../assets/img/${key.replace(/\s/g, '')}.jpg`)} alt={key} style={{ width: '100%', height: '100%' }} />
 								<figcaption>
-									<h3>{key}</h3>
+									<h3 className='Parenth3'>{key}</h3>
 									{user[key].map((profession, i) => {
-										return <h4 key={i}>{profession}</h4>
+										return <h4 className='Parenth4' key={i}>{profession}</h4>
 									})}
 								</figcaption>
 							</figure>
