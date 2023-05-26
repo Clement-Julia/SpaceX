@@ -15,12 +15,15 @@ function shuffleArray(array) {
 
 const QuizTest = () => {
 	const [data, setData] = useState([])
+	const [markData, setMark] = useState(0)
 	const [isPlaying, setIsPlaying] = useState(true)
 	const { id, type } = useParams()
 	const navigate = useNavigate()
 
 	let quizz = Quizz[type]['quizz'][id]
-	quizz.questions = shuffleArray(quizz.questions);
+	if(isPlaying) {
+		quizz.questions = shuffleArray(quizz.questions);
+	}
 	let mark = 0
 	let completed = false
 
@@ -45,16 +48,10 @@ const QuizTest = () => {
 	 * The function shows the result of a quiz and displays a toast message based on the user's score.
 	 */
 	const showResult = () => {
-		completed = true
-		setIsPlaying(false)
-
 		quizz.questions.map((quiz, i) => {
 			quiz.answers.map((answer, a) => {
 				let element = document.querySelector(`[data-parent='${quiz.id}'][data-answer='${answer.id}'][data-label='1']`)
 				if (answer.correct == true) {
-					console.log(answer.answer);
-					console.log(element);
-					console.log("")
 					element.classList.add('text-green')
 					if (answer.id == data[quiz.id]) {
 						mark++
@@ -72,6 +69,11 @@ const QuizTest = () => {
 		} else {
 			toast.success(`Vous avez eu ${mark}/10`)
 		}
+
+		setMark(mark);
+
+		completed = true
+		setIsPlaying(false)
 	}
 
 	/**
@@ -108,7 +110,7 @@ const QuizTest = () => {
 		return (
 			<div className='time-wrapper'>
 				<div key={remainingTime} className={`time ${isTimeUp ? 'up' : ''}`}>
-					{remainingTime && isPlaying ? remainingTime : `${mark}/10`}
+					{remainingTime && isPlaying ? remainingTime : `${markData}/10`}
 				</div>
 				{prevTime.current !== null && (
 					<div key={prevTime.current} className={`time ${!isTimeUp ? 'down' : ''}`}>
@@ -131,7 +133,9 @@ const QuizTest = () => {
 					</div>
 				</div>
 				{quizz.questions.map((quiz, i) => {
-					quiz.answers = shuffleArray(quiz.answers);
+					if(isPlaying){
+						quiz.answers = shuffleArray(quiz.answers);
+					}
 					return (
 						<div className='container pb-3' key={i}>
 							<h4>{quiz.question}</h4>
